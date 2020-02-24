@@ -3,7 +3,7 @@
 /**
  * Plugin Name
  *
- * @package           myPLuginPractice
+ * @package           Accessibility
  * @author            Michael Robinson
  * @copyright         2019 MRobinsonWebDev
  * @license           GPL-2.0-or-later

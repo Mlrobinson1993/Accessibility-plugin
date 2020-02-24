@@ -2,15 +2,15 @@
 /**
  * Plugin Name
  *
- * @package           myPLuginPractice
+ * @package           Accessibility
  * @author            Michael Robinson
  * @copyright         2019 MRobinsonWebDev
  * @license           GPL-2.0-or-later
  *
  * @wordpress-plugin
- * Plugin Name:       Plugin Practice
+ * Plugin Name:       A for Accessibility
  * Plugin URI:        https://mrobinsonwebdev.com
- * Description:       practicey mcpracticeface
+ * Description:       A plugin to tell you how accessibie your wordpress website is.
  * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
@@ -34,10 +34,21 @@ if( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
     require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 };
 
-register_activation_hook(__FILE__, array('PluginConfig\Base\Activate', 'activate' ) );
-register_deactivation_hook(__FILE__, array('PluginConfig\Base\Deactivate', 'deactivate' ) );
-
-
-if ( class_exists( 'PluginConfig\\Init' ) ) {
-    PluginConfig\Init::register_services();
+if (file_exists( dirname( __FILE__ ) . '/config/Base/Activate.php') ) {
+    register_activation_hook(__DIR__, array('/config/Base/Activate.php', 'activate' ) );
 }
+
+if (file_exists( dirname( __FILE__ ) . '/config/Base/Deactivate.php') ) {
+    register_deactivation_hook(__DIR__, array('/config/Base/Deactivate.php', 'deactivate' ) );
+}
+
+
+if( file_exists( dirname(__FILE__) . '/config/init.php' ) ){
+   require_once dirname(__FILE__) . '/config/init.php';
+}
+
+if ( class_exists( 'Init' ) ) {
+    Init::register_services();
+ }
+
+

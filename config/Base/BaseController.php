@@ -1,7 +1,5 @@
 <?php
 
-namespace PluginConfig\Base;
-
 
 //defined publicly accessible variables and initialise variables in the constructor
 class BaseController

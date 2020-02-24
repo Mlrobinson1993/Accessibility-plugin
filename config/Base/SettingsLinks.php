@@ -2,16 +2,14 @@
 /**
  * Plugin Name
  *
- * @package           myPLuginPractice
+ * @package           Accessibility
  * @author            Michael Robinson
  * @copyright         2019 MRobinsonWebDev
  * @license           GPL-2.0-or-later
  *
  * */
 
-namespace PluginConfig\Base;
-
-use \PluginConfig\Base\BaseController;
+ require_once (__DIR__) . '/BaseController.php';
 
 class SettingsLinks extends BaseController
 {
@@ -22,7 +20,7 @@ class SettingsLinks extends BaseController
 
 
      public function settings_links( $links ){
-        $settingsLink = '<a href="admin.php?page=practice_plugin">Settings</a>';
+        $settingsLink = '<a href="admin.php?page=a11y_plugin">Settings</a>';
         array_push($links, $settingsLink);
         return $links;
      }

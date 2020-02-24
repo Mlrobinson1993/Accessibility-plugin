@@ -2,15 +2,19 @@
 /**
  * Plugin Name
  *
- * @package           myPLuginPractice
+ * @package           Accessibility
  * @author            Michael Robinson
  * @copyright         2019 MRobinsonWebDev
  * @license           GPL-2.0-or-later
  *
  * */
-namespace PluginConfig\Base;
 
 class Deactivate {
+
+    public function __construct(){
+
+    }
+
     public static function deactivate(){
         flush_rewrite_rules();
     }
